@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Width Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    #screen-width {
+      font-size: 24px;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="screen-width">
+    Screen Width: <span id="width"></span>px
+  </div>
+
+  <script>
+    function updateScreenWidth() {
+      const width = window.innerWidth;
+      document.getElementById('width').textContent = width;
+    }
+
+    // Update the width when the page loads
+    updateScreenWidth();
+
+    // Update the width when the window is resized
+    window.onresize = updateScreenWidth;
+  </script>
+
+</body>
+</html>
